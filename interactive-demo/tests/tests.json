@@ -1,0 +1,84 @@
+[
+  {
+    "name": "Browse dashboard sections and demo metrics",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "public demo access without authentication",
+      "dashboard navigation",
+      "overview metrics"
+    ],
+    "description": "Verifies visitors can open the demo dashboard and navigate to its main operational sections without signing in.",
+    "steps": [
+      "Open the public demo URL",
+      "Select Customers, Requests, Transactions, Products, PIN Inventory, and Audit Log from the sidebar",
+      "Return to Overview"
+    ],
+    "expected": "Each section opens without a login prompt and Overview displays clearly labeled synthetic demo metrics."
+  },
+  {
+    "name": "Review and approve a sample service request",
+    "viewport": "desktop",
+    "covers": [
+      "request review action",
+      "demo state updates",
+      "status filtering"
+    ],
+    "description": "Verifies a visitor can use dashboard actions to approve a sample request and see the updated status in the demo session.",
+    "steps": [
+      "Open Requests",
+      "Select a pending sample request and choose Approve",
+      "Verify the request status changes to Approved"
+    ],
+    "expected": "The request status updates visibly and a confirmation toast explains that this is a demo-only action."
+  },
+  {
+    "name": "Add a sample product and validate required fields",
+    "viewport": "desktop",
+    "covers": [
+      "product creation",
+      "form validation",
+      "sample catalog updates"
+    ],
+    "description": "Verifies the product form blocks empty submissions and accepts a valid sample product.",
+    "steps": [
+      "Open Products and choose Add product",
+      "Submit the form without a name and verify validation",
+      "Enter a product name and price, then save"
+    ],
+    "expected": "Empty submission is blocked; a valid product appears in the catalog with a demo-only notice."
+  },
+  {
+    "name": "Export sample transactions on mobile",
+    "viewport": "mobile",
+    "covers": [
+      "transaction table responsive layout",
+      "CSV export action",
+      "mobile navigation"
+    ],
+    "description": "Verifies the transaction section and export control remain usable at mobile width.",
+    "steps": [
+      "Open the demo at mobile width",
+      "Navigate to Transactions",
+      "Choose Export CSV"
+    ],
+    "expected": "Transaction rows remain accessible and a CSV file containing synthetic demo transactions is generated."
+  },
+  {
+    "name": "Explore the customer user dashboard",
+    "viewport": "desktop",
+    "covers": [
+      "user dashboard navigation",
+      "customer account overview",
+      "service catalogue preview",
+      "safe service request action"
+    ],
+    "description": "Verifies visitors can switch to the customer-facing dashboard, inspect their sample requests and available services, and try the simulated service request action.",
+    "steps": [
+      "Open User Dashboard from the sidebar",
+      "Review the sample request list, service prices, and profile",
+      "Choose Request a service"
+    ],
+    "expected": "The customer dashboard shows fictional account information and the button explains that ordering and payment are disabled without creating a real request or charge."
+  }
+]
