@@ -1,0 +1,28 @@
+{
+  "name": "sokotech-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "dev": "node --watch --env-file-if-exists=.env server/index.js",
+    "migrate": "node --env-file-if-exists=.env server/migrate.js",
+    "seed:admin": "node --env-file-if-exists=.env server/seed-admin.js",
+    "seed:demo": "node --env-file-if-exists=.env server/seed-demo.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "connect-pg-simple": "^10.0.0",
+    "csv-parse": "^7.0.3",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.1.0",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "pg": "^8.16.3",
+    "zod": "^4.1.12"
+  }
+}

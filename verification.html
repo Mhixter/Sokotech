@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Your SOKOTECH customer service dashboard." />
+    <meta name="theme-color" content="#f6f8f7" />
+    <title>Your SOKOTECH account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <script src="customer.js" defer></script>
+  </head>
+  <body data-customer-dashboard>
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="SOKOTECH home">
+        <img src="assets/sokotech-mark.jpg" alt="" />
+        <span>SOKO<span class="brand-accent">TECH</span><small>IDENTITY</small></span>
+      </a>
+
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="navigation">
+        <a class="nav-link active" href="#home" aria-current="page">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+          Overview
+        </a>
+        <a class="nav-link" href="#verification">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5c0 5.2-3.5 8.5-8 10-4.5-1.5-8-4.8-8-10V6l8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          My verification <span class="nav-count">1</span>
+        </a>
+        <a class="nav-link" href="#documents">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3.5h7l4 4V20a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2Z"/><path d="M14 4v4h4M8.5 13h7M8.5 16.5h7"/></svg>
+          Documents
+        </a>
+        <a class="nav-link" href="#activity">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5m0 14h16"/><path d="m7 15 4-4 3 2 5-6"/></svg>
+          Activity
+        </a>
+      </nav>
+
+      <div class="workspace-label support-label">ACCOUNT</div>
+      <nav class="navigation">
+        <a class="nav-link" href="#settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.7a7.9 7.9 0 0 1-1.8 1l-.3 1.9h-2.8l-.3-1.9a7.9 7.9 0 0 1-1.8-1l-1.7.7-1.4-2.4 1.4-1.1a7 7 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.7a7.9 7.9 0 0 1 1.8-1l.3-1.9h2.8l.3 1.9a7.9 7.9 0 0 1 1.8 1l1.7-.7 1.4 2.4-1.4 1.1a7 7 0 0 1-.1 2Z" transform="translate(-1 -1) scale(.95)"/></svg>
+          Settings
+        </a>
+        <a class="nav-link" href="mailto:support@sokotech.example">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.7 9a2.4 2.4 0 1 1 4 1.8c-1 .8-1.7 1.2-1.7 2.7M12 17h.01"/></svg>
+          Help &amp; support
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="help-card">
+          <div class="help-icon" aria-hidden="true">?</div>
+          <strong>Need a hand?</strong>
+          <p>Our team is here to help you through verification.</p>
+          <a href="mailto:support@sokotech.example">Get in touch <span aria-hidden="true">↗</span></a>
+        </div>
+        <button class="profile-button" type="button" aria-label="Log out of your account" id="customer-logout">
+          <span class="avatar" id="customer-avatar">—</span>
+          <span class="profile-copy"><strong id="customer-name">Loading account…</strong><small>Personal account</small></span>
+          <span class="profile-menu" aria-hidden="true">↗</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="home">
+      <header class="topbar">
+        <button class="mobile-brand" type="button" aria-label="SOKOTECH overview">
+          <img src="assets/sokotech-mark.jpg" alt="" />
+          <span>SOKOTECH</span>
+        </button>
+        <div class="breadcrumbs"><span>Workspace</span><span aria-hidden="true">/</span><strong>Overview</strong></div>
+        <div class="topbar-actions">
+          <span class="secure-label"><span class="secure-dot"></span> Secure session</span>
+          <a class="secure-label" id="demo-admin-view" href="dashboard.html" hidden>Demo admin view ↗</a>
+          <button class="icon-button notification-button" type="button" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9ZM10 21h4"/></svg>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="page-wrap">
+        <div class="demo-sandbox-banner customer-demo-banner" id="customer-demo-banner" role="status" hidden><strong>DEMO SANDBOX</strong><span>These are simulated sample requests. No real identity checks or services were performed.</span></div>
+        <section class="welcome-row" aria-labelledby="welcome-title">
+          <div>
+            <p class="eyebrow" id="customer-date"></p>
+            <h1 id="welcome-title">Welcome <span aria-hidden="true">✳</span></h1>
+            <p class="welcome-copy">A clearer view of your SOKOTECH requests and account.</p>
+          </div>
+          <div class="review-note"><span class="note-icon" aria-hidden="true">✳</span><span>Most verifications take<br /><strong>less than 3 minutes</strong></span></div>
+        </section>
+
+        <section class="verification-card" id="verification" aria-labelledby="verification-title">
+          <div class="card-grid">
+            <div class="card-intro">
+              <span class="status-pill" id="customer-request-status"><span></span> YOUR REQUESTS</span>
+              <h2 id="verification-title">Your requests,<br />at a glance.</h2>
+              <p id="customer-request-copy">When you submit a service request, its database-backed status will appear here.</p>
+              <button class="button button-primary" type="button" id="start-verification">
+                Explore available services <span aria-hidden="true">→</span>
+              </button>
+              <div class="privacy-note"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3"/></svg> Your information is encrypted and protected</div>
+            </div>
+            <div class="progress-panel">
+              <div class="progress-heading"><div><span class="section-kicker">MOST RECENT REQUEST</span><h3 id="progress-heading">No requests yet</h3></div><div class="progress-ring" id="customer-progress-ring" role="img" aria-label="No request submitted"><span id="progress-percent">0<small>%</small></span></div></div>
+              <div class="progress-track" aria-hidden="true"><span id="progress-bar"></span></div>
+              <ol class="step-list">
+                <li class="step-item" data-customer-step="0">
+                  <span class="step-symbol">1</span>
+                  <span class="step-copy"><strong>Request submitted</strong><small>Consent and request details recorded</small></span>
+                  <span class="step-status">WAITING</span>
+                </li>
+                <li class="step-item" data-customer-step="1">
+                  <span class="step-symbol">2</span>
+                  <span class="step-copy"><strong>Service in progress</strong><small>Updates follow the request status</small></span>
+                  <span class="step-status">WAITING</span>
+                </li>
+                <li class="step-item" data-customer-step="2">
+                  <span class="step-symbol">3</span>
+                  <span class="step-copy"><strong>Request completed</strong><small>Final status appears in your activity</small></span>
+                  <span class="step-status">WAITING</span>
+                </li>
+              </ol>
+              <div class="secure-footer"><span aria-hidden="true">✳</span> Your data stays yours. Always.</div>
+            </div>
+          </div>
+          <div class="card-decoration" aria-hidden="true"></div>
+        </section>
+
+        <section class="benefits" aria-label="Verification benefits">
+          <article class="benefit">
+            <span class="benefit-icon mint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v5c0 5.2-3.5 8.5-8 10-4.5-1.5-8-4.8-8-10V6l8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div><strong>Private by design</strong><p>Your personal information is encrypted and handled with care.</p></div>
+          </article>
+          <article class="benefit">
+            <span class="benefit-icon yellow"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><strong>Just a few minutes</strong><p>Simple steps, helpful guidance, no unnecessary waiting.</p></div>
+          </article>
+          <article class="benefit">
+            <span class="benefit-icon lavender"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v11H8l-4 3v-14Z"/><path d="M8 10h8m-8 3h5"/></svg></span>
+            <div><strong>Real people, real help</strong><p>Questions along the way? We're just a message away.</p></div>
+          </article>
+        </section>
+
+        <section class="activity-section" id="activity">
+          <div class="section-heading"><div><p class="eyebrow">YOUR ACCOUNT</p><h2>Recent activity</h2></div><a href="#activity">View all <span aria-hidden="true">→</span></a></div>
+          <div class="activity-list" id="customer-activity"><div class="table-state">Loading your service requests…</div></div>
+        </section>
+
+        <footer class="page-footer">
+          <span>© 2026 SOKOTECH. Your identity, your control.</span>
+          <div><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="mailto:support@sokotech.example">Contact</a></div>
+        </footer>
+      </div>
+    </main>
+
+    <dialog class="verification-dialog" id="verification-dialog" aria-labelledby="dialog-title">
+      <form method="dialog">
+        <button class="dialog-close" aria-label="Close verification">×</button>
+      </form>
+      <div class="dialog-mark"><img src="assets/sokotech-mark.jpg" alt="" /></div>
+      <p class="eyebrow">YOUR IDENTITY, YOUR CONTROL</p>
+      <h2 id="dialog-title">You're in the right place.</h2>
+      <p class="dialog-copy" id="dialog-copy">Service providers and product-specific request forms will appear here once the administrator configures the approved services. This site does not submit verification requests to government systems.</p>
+      <div class="dialog-checklist"><span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10 3 3 7-7"/></svg> Passport or national ID card</span><span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10 3 3 7-7"/></svg> Good lighting for your selfie</span><span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 10 3 3 7-7"/></svg> About 2 minutes of your time</span></div>
+      <button class="button button-primary dialog-action" type="button" id="dialog-action">Got it, continue <span aria-hidden="true">→</span></button>
+      <button class="dialog-back" type="button" id="dialog-back">I'll do this later</button>
+      <p class="dialog-disclaimer">Demo experience · No information is submitted or stored</p>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

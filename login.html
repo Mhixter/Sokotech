@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Sign in to your SOKOTECH account." />
+    <meta name="theme-color" content="#f8faf8" />
+    <title>Log in — SOKOTECH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="landing.css" />
+    <link rel="stylesheet" href="auth.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body class="auth-page">
+    <header class="auth-topbar">
+      <a class="site-brand" href="index.html" aria-label="SOKOTECH home"><img src="assets/sokotech-mark.jpg" alt="" /><span>SOKO<span>TECH</span><small>IDENTITY, YOUR WAY</small></span></a>
+      <a class="auth-return" href="index.html"><span aria-hidden="true">←</span> Back to home</a>
+    </header>
+    <main class="auth-layout">
+      <section class="auth-story" aria-label="Welcome to SOKOTECH">
+        <div class="story-orbit" aria-hidden="true"></div>
+        <span class="auth-kicker"><i></i> GOOD TO SEE YOU AGAIN</span>
+        <h1>Your next<br />step starts<br /><span>right here.</span></h1>
+        <p>Pick up where you left off. Your identity journey is ready when you are.</p>
+        <div class="story-promise"><span aria-hidden="true">✓</span> Simple steps <i>·</i> Privacy first <i>·</i> People to help</div>
+        <div class="story-brand">SOKO<span>TECH</span> <small>IDENTITY, YOUR WAY</small></div>
+      </section>
+      <section class="auth-main">
+        <div class="auth-card login-card">
+          <span class="demo-tag"><span></span> SECURE SIGN IN</span>
+          <h2>Welcome back</h2>
+          <p class="auth-subtitle">Log in to pick up right where you left off.</p>
+          <div class="demo-notice"><span aria-hidden="true">i</span><p>Sign in securely to continue. For your safety, we never display your password in the dashboard.</p></div>
+          <form class="auth-form" data-auth-form="login">
+            <label class="field-label">Email address<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+            <label class="field-label">Password
+              <span class="password-wrap"><input name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required /><button class="password-toggle" type="button" aria-label="Show password" aria-pressed="false">Show</button></span>
+            </label>
+            <div class="form-options"><label class="remember-check"><input name="remember" type="checkbox" /><span>Keep me signed in</span></label><a href="#reset-password" id="forgot-password">Forgot password?</a></div>
+            <button class="button button-dark auth-submit" type="submit">Log in <span aria-hidden="true">→</span></button>
+            <p class="auth-feedback" role="status" aria-live="polite"></p>
+          </form>
+          <form class="auth-reset-form" id="auth-reset-form" hidden>
+            <label>Email address<input name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+            <button class="button button-dark auth-submit" type="submit">Request reset instructions <span aria-hidden="true">→</span></button>
+            <p class="reset-feedback" role="status" aria-live="polite"></p>
+            <button class="reset-back" type="button" data-reset-back>Back to log in</button>
+          </form>
+          <p class="auth-switch">New to SOKOTECH? <a href="signup.html">Create an account</a></p>
+          <div class="auth-assurance"><span aria-hidden="true">◈</span> Protected by secure, server-side sessions.</div>
+        </div>
+        <footer class="auth-footer"><span>© 2026 SOKOTECH</span><a href="mailto:hello@sokotech.example">Need help?</a><a href="#privacy">Privacy</a></footer>
+      </section>
+    </main>
+  </body>
+</html>
