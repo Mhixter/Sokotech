@@ -1,0 +1,16 @@
+{
+  "methods": [
+    "email"
+  ],
+  "headline": "Welcome to SOKOTECH",
+  "subtitle": "Continue securely using the verification link sent to your email.",
+  "style": {
+    "mode": "light",
+    "accentColor": "#2563a6",
+    "backgroundColor": "#f5f7fb",
+    "panelColor": "#ffffff",
+    "textColor": "#102b49",
+    "fontFamily": "DM Sans, system-ui, sans-serif",
+    "borderRadius": 14
+  }
+}

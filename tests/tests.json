@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Submit and inspect a service request",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "authentication sign-in",
+      "POST /api/vpn/requests",
+      "database persistence",
+      "GET /api/vpn/requests owner scoping",
+      "service request details view",
+      "72-hour SLA countdown",
+      "status history timeline",
+      "NIN Validation default price ₦1,000"
+    ],
+    "description": "Verifies a customer can submit a request and inspect its recorded price, countdown and status history.",
+    "steps": [
+      "Sign in as a customer",
+      "Open NIN Validation, enter an 11-digit NIN and choose No record found",
+      "Submit the request and note its reference",
+      "Open Request history and expand the request",
+      "Verify the countdown, ₦1,000 price and Submitted timeline entry"
+    ],
+    "expected": "The customer's request persists with a 72-hour countdown, recorded ₦1,000 NIN Validation price and initial status history."
+  },
+  {
+    "name": "Super Agent manages pricing and publishes status",
+    "viewport": "desktop",
+    "covers": [
+      "Super Agent email allowlist",
+      "GET /api/agent/pricing authorization",
+      "POST /api/agent/pricing",
+      "PUT /api/agent/vpn-requests/:id",
+      "audit history",
+      "customer-visible status update",
+      "live status polling"
+    ],
+    "description": "Verifies the Super Agent can change future service pricing and publish status updates.",
+    "steps": [
+      "Sign in with the authorized Super Agent account",
+      "Set NIN Validation to ₦1,200 and save",
+      "Open a submitted request and set status to Processing with a progress note",
+      "Publish the update and inspect the status history"
+    ],
+    "expected": "The new price is saved for future requests and the updated status/note is recorded in the request timeline."
+  },
+  {
+    "name": "Inspect request details on mobile",
+    "viewport": "mobile",
+    "covers": [
+      "all customer service history",
+      "view service request details",
+      "responsive history timeline",
+      "mobile sidebar toggle and drawer",
+      "72-hour countdown responsive layout"
+    ],
+    "description": "Verifies the customer can inspect any request and its update trail on a phone.",
+    "steps": [
+      "Sign in as a customer with a request",
+      "Open Request history",
+      "Expand View full details",
+      "Review service details, price, countdown and status timeline"
+    ],
+    "expected": "The request details and update timeline display on mobile without horizontal overflow."
+  },
+  {
+    "name": "Reject invalid requests and protect pricing",
+    "viewport": "desktop",
+    "covers": [
+      "required field validation",
+      "customer-private request data",
+      "GET /api/agent/vpn-requests authorization",
+      "pricing route authorization",
+      "negative price validation"
+    ],
+    "description": "Verifies invalid submissions are rejected and customers cannot access the Super Agent pricing manager.",
+    "steps": [
+      "Sign in as a regular customer",
+      "Submit an invalid NIN validation request",
+      "Attempt to open the Super Agent queue and pricing manager",
+      "Verify access is denied"
+    ],
+    "expected": "Invalid requests are rejected and regular customers cannot read other customers' requests or change pricing."
+  },
+  {
+    "name": "Show a retry path when request submission fails",
+    "viewport": "mobile",
+    "covers": [
+      "backend error response handling",
+      "visible retry path",
+      "POST /api/vpn/requests failure"
+    ],
+    "description": "Verifies temporary backend failure does not show false success.",
+    "qa_faults": [
+      {
+        "method": "POST",
+        "path": "/api/vpn/requests",
+        "status": 503,
+        "body_json": {
+          "error": "temporary_unavailable"
+        }
+      }
+    ],
+    "steps": [
+      "Sign in and complete a valid service request",
+      "Submit while the API returns a simulated unavailable response"
+    ],
+    "expected": "A visible error appears, no success reference is shown, and the customer can retry later."
+  }
+]
